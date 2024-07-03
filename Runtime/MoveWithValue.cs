@@ -10,35 +10,33 @@ public class MoveWithValue : MonoBehaviour
     public float m_rotateLeftRight;
     public float m_rotateUpDown;
 
-    public Vector3 m_direction;
-    public float m_speedMove;
     public float m_speedRotate;
 
 
     [Header("--- Movement ---")]
-    public float m_moveForwardSpeed;
+    public Vector3 m_direction;
+    public float m_speedMove;
 
 
-
-    public void SetRotateLeftRigh(float valuePercent)
+    public void SetRotateLeftRigh(float rotateHorizontalValue)
     {
-        m_rotateLeftRight = valuePercent;
+        m_rotateLeftRight = rotateHorizontalValue;
     }
-    public void SetRotateUpDown(float valuePercent)
+    public void SetRotateUpDown(float rotateVerticalValue)
     {
-        m_rotateUpDown = valuePercent;
+        m_rotateUpDown = rotateVerticalValue;
     }
-    public void SetMoveForward(float valuePercent)
+    public void SetMoveForward(float forwardMovementValue)
     {
-        m_direction.z = valuePercent;
+        m_direction.z = forwardMovementValue;
     }
-    public void SetMoveRight(float valuePercent)
+    public void SetMoveRight(float sideMovementValue)
     {
-        m_direction.x = valuePercent;
+        m_direction.x = sideMovementValue;
     }
-    public void SetMoveUp(float valuePercent)
+    public void SetMoveUp(float upMovementValue)
     {
-        m_direction.y = valuePercent;
+        m_direction.y = upMovementValue;
     }
 
 
