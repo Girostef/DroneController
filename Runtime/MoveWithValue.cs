@@ -6,23 +6,27 @@ public class MoveWithValue : MonoBehaviour
 {
     public Transform m_toMove;
 
-    [Header("Axis")]
-    [Tooltip("C'est un axis pour bouger le drone vers l'avant")]
+    [Header("--- Rotation Axes ---")]
     public float m_rotateLeftRight;
+    public float m_rotateUpDown;
 
     public Vector3 m_direction;
-    public float m_speedMove = 1;
-    public float m_speedRotate = 180;
+    public float m_speedMove;
+    public float m_speedRotate;
 
 
-    [Header("Speed")]
-    public float m_moveForwardSpeed = 2;
+    [Header("--- Movement ---")]
+    public float m_moveForwardSpeed;
 
 
 
     public void SetRotateLeftRigh(float valuePercent)
     {
         m_rotateLeftRight = valuePercent;
+    }
+    public void SetRotateUpDown(float valuePercent)
+    {
+        m_rotateUpDown = valuePercent;
     }
     public void SetMoveForward(float valuePercent)
     {
@@ -43,6 +47,7 @@ public class MoveWithValue : MonoBehaviour
     {
         m_toMove.Translate(m_direction * Time.deltaTime * m_speedMove, Space.Self);
         m_toMove.Rotate(Vector3.up, m_rotateLeftRight * Time.deltaTime * m_speedRotate, m_rotateSpaceType);
+        m_toMove.Rotate(Vector3.right, m_rotateUpDown * Time.deltaTime * m_speedRotate, m_rotateSpaceType);
     }
 
 
